@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANTARKTYKA — Żywe królestwo lodu</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">✦</div>
+          <div>
+            <p class="eyebrow">INTERAKTYWNY BIOM</p>
+            <h1>Antarktyka</h1>
+          </div>
+        </div>
+        <div class="topbar-meta">
+          <span class="live-dot"></span>
+          <span>EKOSYSTEM ŻYJE</span>
+          <span class="divider"></span>
+          <span id="clock">14:32 UTC</span>
+        </div>
+      </header>
+
+      <section class="intro">
+        <div>
+          <p class="eyebrow">MORZE ROSS'A · 78°S</p>
+          <h2>Żywe królestwo <em>lodu</em></h2>
+        </div>
+        <p class="intro-copy">Przeciągnij panoramę, aby odkrywać odległe siedliska. Kliknij zwierzę, by poznać jego historię.</p>
+      </section>
+
+      <section class="scene-wrap">
+        <div class="scene-hud">
+          <div class="hud-card">
+            <span class="hud-icon">◒</span>
+            <div><small>WARUNKI</small><strong>-18°C · wiatr 24 km/h</strong></div>
+          </div>
+          <div class="location-pill"><span>●</span> ZATOKA CISZY</div>
+          <div class="hud-card hud-card-right">
+            <div><small>GODZINA</small><strong>ŚWIATŁO POLARNE</strong></div>
+            <span class="sun-icon">☼</span>
+          </div>
+        </div>
+        <div class="scene-viewport" id="viewport" aria-label="Interaktywna panorama Antarktyki">
+          <canvas id="scene"></canvas>
+          <div class="scene-vignette"></div>
+          <div class="drag-hint" id="dragHint"><span>↔</span> PRZECIĄGNIJ, ABY EKSPLOROWAĆ</div>
+          <div class="hotspot-layer" id="hotspots"></div>
+        </div>
+        <div class="scene-footer">
+          <div class="legend">
+            <span><i class="legend-dot bear"></i> LĄD</span>
+            <span><i class="legend-dot sea"></i> WODA</span>
+            <span><i class="legend-dot rookery"></i> KOLONIA</span>
+          </div>
+          <div class="progress"><span id="progressBar"></span></div>
+          <span class="map-label">PANORAMA 01 / 04</span>
+        </div>
+      </section>
+
+      <section class="discoveries">
+        <div class="section-heading">
+          <div><p class="eyebrow">OBSERVATORIUM</p><h3>Spotkaj mieszkańców</h3></div>
+          <p>6 gatunków · 3 strefy siedlisk</p>
+        </div>
+        <div class="animal-grid" id="animalGrid"></div>
+      </section>
+    </main>
+
+    <aside class="info-panel" id="infoPanel" aria-hidden="true">
+      <button class="close-button" id="closePanel" aria-label="Zamknij panel">×</button>
+      <div class="info-image" id="infoImage"></div>
+      <div class="info-content">
+        <div class="info-kicker" id="infoKicker"></div>
+        <h2 id="infoTitle"></h2>
+        <p class="latin" id="infoLatin"></p>
+        <p class="info-description" id="infoDescription"></p>
+        <div class="fact-grid" id="factGrid"></div>
+        <div class="did-you-know"><span>✦</span><p><strong>CZY WIESZ, ŻE?</strong><br /><span id="infoFact"></span></p></div>
+      </div>
+    </aside>
+    <div class="backdrop" id="backdrop"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
